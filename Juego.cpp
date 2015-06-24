@@ -179,13 +179,13 @@ int Juego::Jugar(graficos &graf){
         if(cond==ENTER_PRESIONADO){
             cond=this->mostrar_menu();
             if(cond==1)
-                this->mostrar_equipo(heroe);
+                this->mostrar_equipo(graf);
             else if(cond ==2)
-                this->mostrar_inventario(heroe);
+                this->mostrar_inventario(graf);
             else if(cond==3)
                 continue;
             else{
-                int selc=this->mostrar_salir(heroe);
+                int selc=this->mostrar_salir(graf);
                 if (selc==1) return 0; // sale del juego
             } 
         }
@@ -289,7 +289,7 @@ int  Juego::movimiento(Avatar& heroe,const graficos& graf){
 }
 
 
-void Juego::mostrar_equipo(Avatar& heroe) const{
+void Juego::mostrar_equipo(graficos& graf) const{
     /* Mostrará el equipamiento actual del personaje*/
 }
 void Juego::buscar_pos(const Laberinto& lab,int& x,int& y,int cond) const{
@@ -376,15 +376,23 @@ void Juego::buscar_pos(const Laberinto& lab,int& x,int& y,int cond) const{
         }
     }
 }
+
+
+
 /* VA AVATAR*/
-void Juego::mostrar_inventario(Avatar& heroe) const{
+void Juego::mostrar_inventario(graficos &graf) const{
     /* Mostrará el inventario*/
 }
-int  Juego::mostrar_salir(Avatar& heroe)const{
+int  Juego::mostrar_salir(graficos &graf)const{
+    graf.PantallaSalida();
+    int valor = graf.Recibe_tecla(); 
+    return valor;
     /* MOSTRAR MENU DE SALIR, retorna 1 si desea salir
      0 caso contrario*/
 }
+
 int Juego::mostrar_menu()const{
+    return 4;
     /* MUESTRA UN MENU CON : 1. equipamiento
                              2. inventario
                              3.  retornar
