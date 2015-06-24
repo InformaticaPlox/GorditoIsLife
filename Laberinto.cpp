@@ -7,7 +7,6 @@
 
 #include "Laberinto.h"
 #include "DataBase.h"
-#include "auxiliar.h"
 #include <stdlib.h> 
 #include <time.h>
 #include <iostream>
@@ -38,8 +37,7 @@ Laberinto::Laberinto(const Laberinto& orig) {
     this->pctArtefacto=orig.pctArtefacto;
     this->pctMonstruo=orig.pctMonstruo;
     this->artefactos=orig.artefactos;
-    this->monstruos=orig.monstruos;
-            
+    this->monstruos=orig.monstruos;         
 }
 
 Laberinto::~Laberinto() {
@@ -74,11 +72,11 @@ void Laberinto::SetMatriz(ifstream &arch) {
             if (c == 'F') this->matriz[i][j].SetTipo(FIN);
             if (c == ' '){
                 this->matriz[i][j].SetTipo(LIBRE); // Valor inicial
-                double valor = fRand(0,1);
+                double valor = this->random(0,1);
                 if (this->pctMonstruo > valor) 
                     this->matriz[i][j].SetTipo(MONSTRUO);
                 else{
-                    valor = fRand(0,1);
+                    valor = this->random(0,1);
                     if (this->pctArtefacto > valor) 
                         this->matriz[i][j].SetTipo(ARTEFACTO);                
                 }                  
@@ -162,7 +160,6 @@ void Laberinto::SetM(int M) {
 int Laberinto::GetM() const {
     return M;
 }
-
 
 void Laberinto::imprimir(){
     cout << this->GetM() << "\t" << this->GetN() << endl;
@@ -250,4 +247,9 @@ Monstruo  Laberinto::buscarMonstruo (int x,int y){
    }
    Monstruo mon;
    return mon; //vacio
+}
+double Laberinto::random(int fMin,int fMax)const{
+    double f=(double)rand()/RAND_MAX;
+    f=(double)rand()/RAND_MAX;
+    return fMin+f*(fMax-fMin);
 }

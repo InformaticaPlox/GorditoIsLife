@@ -22,9 +22,11 @@ public:
     virtual ~Armadura();
     
     void SetDefensa(int defensa);
-    int GetDefensa() const;
     void SetNombre(string nombre);
+    
+    int GetDefensa() const;
     string GetNombre() const;
+    
     void imprimirNombre();
     Armadura operator=(const Armadura& armor);
     void usar(Avatar& heroe);

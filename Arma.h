@@ -14,7 +14,6 @@
 #include <ctime> 
 #include <cstdlib>
 using namespace std;
- // esto se colocará en juego
 
 class Avatar;
 
@@ -22,23 +21,25 @@ class Arma:public Artefacto{
 public:
     Arma(int, int, string,const Ataque&,const Ataque&);
     Arma();
-    
     Arma(const Arma& orig);
     virtual ~Arma();
     
     void SetNombre(string nombre);
-    string GetNombre() const;
     void SetDanhoMax(int danhoMax);
-    int GetDanhoMax() const;
     void SetDanhoMin(int danhoMin);
+    
+    string GetNombre() const;
+    int GetDanhoMax() const;
     int GetDanhoMin() const;
-    int critico()const;
     Ataque GetAtaque2() const;
     Ataque GetAtaque1() const;
+    int critico()const;
+    char* ObtenDescripcion();
+    
     void imprimirNombre();
     Arma operator=(const Arma& arma);
     void usar(Avatar& heroe);
-    char* ObtenDescripcion();
+    
 private:
     int danhoMin;
     int danhoMax;

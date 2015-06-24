@@ -15,8 +15,7 @@
 
 using namespace std;
 
-Pocion::Pocion() : id(0), nombre(""), puntos(0){
-    
+Pocion::Pocion() : id(0), nombre(""), puntos(0){    
 }
 
 Pocion::Pocion(int cod,string nomb,int pts) : id(cod),nombre(nomb),puntos(pts){
@@ -30,7 +29,6 @@ Pocion::Pocion(const Pocion& orig) {
 
 Pocion::~Pocion() {
     this->SetNombre("");
-//    cout << "Estoy en el destructor de pocion" << endl;
 }
 
 void Pocion::SetNombre(std::string nombre) {
@@ -93,9 +91,6 @@ char* Pocion::ObtenDescripcion(){
     char buff[200], aux[10];
     string strAux = this->GetNombre();
     strcpy(buff,strAux.c_str());
-    //sprintf(aux,"%d",this->GetId());
-    //strcat(buff,"/");
-    //strcat(buff,aux);
     sprintf(aux,"%d",this->GetPuntos());
     strcat(buff,"/");
     strcat(buff,aux);
