@@ -19,7 +19,6 @@ Saco::Saco(const Saco& orig) {
 }
 
 Saco::~Saco() {
-//    cout << "Esstoy en el destructor de saco" << endl;
 }
 
 void Saco::agregaArtefacto(Artefacto*& artefacto){

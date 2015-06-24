@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
-CND_ARTIFACT_NAME_Debug=gorditoislife
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/gorditoislife
+CND_ARTIFACT_NAME_Debug=juego-master
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/juego-master
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
-CND_PACKAGE_NAME_Debug=gorditoislife.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/gorditoislife.tar
+CND_PACKAGE_NAME_Debug=juego-master.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/juego-master.tar
 # Release configuration
 CND_PLATFORM_Release=MinGW-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
-CND_ARTIFACT_NAME_Release=gorditoislife
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/gorditoislife
+CND_ARTIFACT_NAME_Release=juego-master
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/juego-master
 CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
-CND_PACKAGE_NAME_Release=gorditoislife.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/gorditoislife.tar
+CND_PACKAGE_NAME_Release=juego-master.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/juego-master.tar
 #
 # include compiler specific variables
 #

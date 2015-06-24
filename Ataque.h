@@ -17,13 +17,15 @@ public:
     Ataque();
     Ataque(const Ataque& orig);
     virtual ~Ataque();
-    std::string GetDescripcion() const;
+    
     void SetMana(int);
-    int GetMana() const;
     void SetDanio(int);
+    std::string GetDescripcion() const;
+    void SetNombre(std::string);
+    int GetMana() const;
     int GetDanio() const;
     std::string GetNombre() const;
-    void SetNombre(std::string);
+    
     Ataque operator=(const Ataque& atk);
 private:
     std::string nombre;

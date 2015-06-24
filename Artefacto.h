@@ -19,19 +19,19 @@ class Artefacto {
 public:
     Artefacto();
     virtual ~Artefacto();
-    
     virtual Artefacto operator=(const Artefacto& artefacto);
-    //friend virtual void usar(Entidad);
     virtual void usar(Avatar& heroe); 
-    //Sobrecargar operadores de flujo
     virtual void imprimirNombre();
+    
     void setCoordY(int coordY);
-    int getCoordY() const;
     void setCoordX(int coordX);
-    int getCoordX() const;
-    virtual char* ObtenDescripcion();
     void setTipo(int tipo);
+    
+    int getCoordY() const;
+    int getCoordX() const;
     int getTipo() const;
+    virtual char* ObtenDescripcion();
+
 private:
     int coordX;
     int coordY;

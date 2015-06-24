@@ -49,6 +49,8 @@ public:
     Laberinto& operator=(const Laberinto&);
     Celda& operator()(int,int)const;
     void imprimir();
+    double random(int,int)const;
+    
     friend DataBase;
     friend Dibujador;
     
