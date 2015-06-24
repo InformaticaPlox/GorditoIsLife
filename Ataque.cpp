@@ -63,3 +63,6 @@ void Ataque::SetDanio(int danio){
 void Ataque::SetMana(int mana){
     this->mana=mana;
 }
+void Ataque::SetNombre(string nombre){
+    this->nombre=nombre;
+}

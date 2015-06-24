@@ -85,8 +85,11 @@ Monstruo DataBase::devuelve_monstruo(int* niveles){
     int size = this->monstruos.size();
     int index =rand()% size;
     Monstruo mon =this->monstruos[index];
-    mon.SetAtaque(mon.GetAtaque()*nivelRandom*PORCENTAJEAUMENTO); mon.SetDefensa(mon.GetDefensa()*nivelRandom*PORCENTAJEAUMENTO);
-    mon.SetMaxVida(mon.GetMaxVida()*nivelRandom*PORCENTAJEAUMENTO);mon.SetNivel(nivelRandom); mon.SetVidaActual(mon.GetMaxVida());
+    mon.SetAtaque(mon.GetAtaque()*nivelRandom*PORCENTAJEAUMENTO); 
+    mon.SetDefensa(mon.GetDefensa()*nivelRandom*PORCENTAJEAUMENTO);
+    mon.SetMaxVida(mon.GetMaxVida()*nivelRandom*PORCENTAJEAUMENTO);
+    mon.SetNivel(nivelRandom); 
+    mon.SetVidaActual(mon.GetMaxVida());
     for(int i=0;i<NUMARTEFACTOS;i++){
         Artefacto *art=this->devuelve_artefacto(niveles);
         mon.registraArtefacto(art);

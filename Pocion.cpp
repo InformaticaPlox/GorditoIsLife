@@ -76,10 +76,16 @@ void Pocion::usar(Avatar& heroe){
     if (this->id == 0){
         int aux = heroe.GetVidaActual();
         heroe.SetVidaActual(aux+this->puntos);
+        int max = heroe.GetMaxVida();
+        if (heroe.GetVidaActual() > max)
+            heroe.SetVidaActual(max);
     }
     else{
         int aux = heroe.GetManaActual();
         heroe.SetManaActual(aux+this->puntos);
+        int max = heroe.GetManaMax();
+        if (heroe.GetManaActual() > max)
+            heroe.SetManaActual(max);
     }
 }
 

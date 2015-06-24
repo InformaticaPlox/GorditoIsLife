@@ -11,8 +11,7 @@
 Entidad::Entidad() : posX(0),posY(0),maxVida(0),vidaActual(0),nombre(""){
 }
 
-Entidad::Entidad(int pX, int pY, int maxLife, int actualLife, string name) : posX(pX),posY(pY),maxVida(maxLife),vidaActual(actualLife),nombre(name){
-    
+Entidad::Entidad(int pX, int pY, int maxLife, int actualLife, string name) : posX(pX),posY(pY),maxVida(maxLife),vidaActual(actualLife),nombre(name){    
 }
 
 Entidad::Entidad(const Entidad& orig) {
@@ -29,7 +28,6 @@ Entidad::~Entidad() {
     this->maxVida = 0;
     this->vidaActual = 0;
     this->nombre = "";
-//    cout << "Estoy en el destructor de entidad" << endl;
 }
 
 void Entidad::SetNombre(string nombre) {
@@ -77,6 +75,5 @@ void Entidad::imprimePosACtual(){
     cout << '(' << this->posX << ':' << this->posY << ')' << endl;
 }
 
-Entidad Entidad::operator =(const Entidad& ent){
-    
+Entidad Entidad::operator =(const Entidad& ent){   
 }

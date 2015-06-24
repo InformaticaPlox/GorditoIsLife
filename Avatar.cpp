@@ -7,14 +7,23 @@
 
 #include "Avatar.h"
 #include "Ataque.h"
+#include "Pocion.h"
 
-Avatar::Avatar() : Entidad(), equip(), manaActual(100), manaMax(100){ 
-    Arma weapon;
-    Ataque at1;
-    at1.SetDanio(50); at1.SetMana(10);
-    weapon.SetDanhoMax(20); weapon.SetDanhoMin(10);
-    weapon.SetNombre("Noob Sword");
-    
+Avatar::Avatar() : Entidad(),equip(),manaActual(100), manaMax(100){ 
+    Ataque at1,at2;
+    at1.SetDanio(50); at1.SetMana(10);at1.SetNombre("Beginner Fury");
+    at2.SetDanio(40); at2.SetMana(8); at2.SetNombre("Cry of the noob");
+    Arma weapon(10,20,"Noob Sword",at1,at2);
+    Armadura arm(50,"The protection of the noob");
+    Pocion poc_cur(0,"beginner heal",100);
+    Pocion poc_mp( 1,"beginner mana",50);
+    this->vidaActual=200; this->maxVida=200;
+    Artefacto *art =new Pocion(poc_cur);
+    this->inventario.agregaArtefacto(art); this->inventario.agregaArtefacto(art);
+    Artefacto *art2 =new Pocion(poc_mp);   
+    this->inventario.agregaArtefacto(art2); this->inventario.agregaArtefacto(art2);
+    this->equip.SetWeapon(weapon);
+    this->equip.SetArmor(arm);
 }
 
 Avatar::Avatar(int pX, int pY, int mxVida, int vidaA, string nomb, const Arma& arma, const Armadura& armadura, int manaAc, int maxMana) : Entidad(pX,pY,mxVida,vidaA,nomb), 
@@ -36,7 +45,6 @@ Avatar::Avatar(const Avatar& orig) {
 Avatar::~Avatar() {
     this->manaActual = 0;
     this->manaMax = 0;
-//    cout << "Estoy en el destructor de Avatar" << endl;
 }
 
 void Avatar::SetManaMax(int manaMax) {
@@ -155,4 +163,15 @@ int Avatar::verificaMana(int tipoAtq){
         if (this->GetManaActual() >= atk.GetMana()) return 1;
     }
     return 0;
+}
+
+int Avatar::AtkNormal() const{
+    Arma arma = this->obtenArma();
+    return arma.critico();
+}
+
+void Avatar::RecuperaMana(){
+    this->manaActual += 80;
+    if (this->manaActual > this->manaMax)
+        this->manaActual = this->manaMax;
 }

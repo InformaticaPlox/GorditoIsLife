@@ -11,7 +11,16 @@
 #include <stdlib.h> 
 #include <time.h>
 #include <iostream>
+
 #define NUMFILE 10
+#define LIBRE 0
+#define PARED 1
+#define INICIO 3
+#define FIN 4
+#define MONSTRUO 6
+#define ARTEFACTO 5
+
+
 
 using namespace std;
 
@@ -60,18 +69,18 @@ void Laberinto::SetMatriz(ifstream &arch) {
     for (int i = 0; i < this->M;  i++){
         for (int j = 0; j < this->N; j++){
             arch.get(c);
-            if (c == '#') this->matriz[i][j].SetTipo(1);
-            if (c == 'I') this->matriz[i][j].SetTipo(3);
-            if (c == 'F') this->matriz[i][j].SetTipo(4);
+            if (c == '#') this->matriz[i][j].SetTipo(PARED);
+            if (c == 'I') this->matriz[i][j].SetTipo(INICIO);
+            if (c == 'F') this->matriz[i][j].SetTipo(FIN);
             if (c == ' '){
-                this->matriz[i][j].SetTipo(0); // Valor inicial
+                this->matriz[i][j].SetTipo(LIBRE); // Valor inicial
                 double valor = fRand(0,1);
                 if (this->pctMonstruo > valor) 
-                    this->matriz[i][j].SetTipo(6);
+                    this->matriz[i][j].SetTipo(MONSTRUO);
                 else{
                     valor = fRand(0,1);
                     if (this->pctArtefacto > valor) 
-                        this->matriz[i][j].SetTipo(5);                
+                        this->matriz[i][j].SetTipo(ARTEFACTO);                
                 }                  
             }
         }
