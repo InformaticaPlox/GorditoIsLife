@@ -488,21 +488,20 @@ bool Juego::Batalla(Avatar& heroe, Monstruo& mon)const{
     int danho1 = heroe.obtenDanho(1);
     int danho2 = heroe.obtenDanho(2);
     while ((vidaHeroe != 0) && (vidaMonstruo != 0)){
-        char accion;
-        int selAtk;
+        int accion; //Selecciona si Ataco, Uso saco o Huyo
+        int selAtk; //Selecciona cual de los 2 ataques del arma usare
         //Que desea hacer?
         //Si desea atacar
-        if (accion == 'A' || accion == 'a'){
+        if (accion == 0){ //ATaco
             //Que ataque desea uasar?
             //Imprime el ataque que usa
             //Usa ataque
-            int danho;
-            if (selAtk == 1){
+            if (selAtk == 1){ //Ataque 1
                 if (heroe.verificaMana(1))
                     heroe.disminuyeMana(1);
                 mon.recibeDanio(danho1); //Disminuir vida monstruo
             }
-            else if (selAtk == 2){
+            else if (selAtk == 2){ //Ataque 2
                 if (heroe.verificaMana(2))
                     heroe.disminuyeMana(2);
                 mon.recibeDanio(danho2); //Disminuir vida monstruo
@@ -514,7 +513,7 @@ bool Juego::Batalla(Avatar& heroe, Monstruo& mon)const{
             heroe.recibeDanio(danhoMons);
         }
         //Si desea usar pocion
-        if (accion == 'P' || accion == 'p'){
+        if (accion ==1){
             //Sacar elemento del saco
             int pos;
             Artefacto* art = heroe.retiraArtefacto(pos);
@@ -522,7 +521,7 @@ bool Juego::Batalla(Avatar& heroe, Monstruo& mon)const{
             art->usar(heroe);
         }
         //Si desea huir
-        else{
+        else if (accion == 2){
             return 2;
         }
         if (heroe.GetVidaActual() == 0) return 1;
