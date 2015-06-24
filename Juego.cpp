@@ -42,7 +42,7 @@
 #define ARTEFACTBASE 2
 #define ENTER 13
 #define Ix 2
-#define Iy 2
+#define Iy 3
 using namespace std;
 
 
@@ -147,6 +147,7 @@ int Juego::Jugar(graficos &graf){
     GestorLaberinto gestor;
     Dibujador dib(4,5);
     vector <Laberinto> laberintos;
+    vector <Laberinto> laberintosJugados;
     DataBase data;
     
     
@@ -166,13 +167,15 @@ int Juego::Jugar(graficos &graf){
     cout<<"INGRESE EL NOMBRE DE SU PERSONAJE: "<<endl;
     cin>>nombre;
     
-    heroe.SetNombre(nombre); heroe.SetPosX(Ix+1); heroe.SetPosY(Iy);  //Posicion inicial
+    heroe.SetNombre(nombre); heroe.SetPosX(Ix); heroe.SetPosY(Iy);  //Posicion inicial
     vector<Laberinto>::iterator it;
     it=laberintos.begin();
-    this->laberintoActual=*it.base();
+    
+    
+    int numLab=0;
+    this->laberintoActual=laberintos.at(numLab);
     this->laberintoActual(heroe.GetPosX(),heroe.GetPosY()).SetTipo(2);
     while(it!=laberintos.end()){
-        //this->laberintoActual=*it.base();
     dib.Dibuja(heroe.GetPosX(),heroe.GetPosY(),this->laberintoActual.GetM()-1,this->laberintoActual.GetN()-1,this->laberintoActual,graf);
         int cond=0;
         cond=this->movimiento(heroe,graf);
@@ -194,19 +197,27 @@ int Juego::Jugar(graficos &graf){
             if(it==laberintos.begin()) {                
                 continue;
             }
+            numLab--;
             it--;
             int x=0,y=0;
             buscar_pos(*it.base(),x,y,0);
-            this->laberintoActual =*it;
+            laberintos.erase(it+1);
+            laberintos.insert(it+1,this->laberintoActual);
+            this->laberintoActual=laberintos.at(numLab);
+           // this->laberintoActual =laberintosJugados.at(numLab); laberintosJugados.pop_back();
             heroe.SetPosX(x); heroe.SetPosY(y);
             this->laberintoActual(x,y).SetTipo(2);
         }
         else if(cond==AVANZA){
+            numLab++;
             it++;
             if(it==laberintos.end()) continue;
             int x=0,y=0;
             buscar_pos(*it.base(),x,y,1);
-            this->laberintoActual=*it;
+            laberintos.erase(it-1);
+            laberintos.insert(it-1,this->laberintoActual);
+            laberintosJugados.push_back(this->laberintoActual);
+            this->laberintoActual=laberintos.at(numLab);
             heroe.SetPosX(x); heroe.SetPosY(y);
             this->laberintoActual(x,y).SetTipo(2);
         }
@@ -262,6 +273,7 @@ int  Juego::movimiento(Avatar& heroe,const graficos& graf){
             art->setCoordX(x); art->setCoordY(y);
             this->laberintoActual.AgregarArtefacto(art);
             this->laberintoActual(x,y).SetTipo(5); //artefacto
+            return MOVIMIENTO;
             }  
         }
         else{
