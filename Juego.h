@@ -18,7 +18,7 @@ public:
     virtual ~Juego();
     void console_clear(int,int,int,int,char=' ')const;
     std::string* nombres_archivos()const;
-    void Prologo()const;
+    void Prologo(graficos &graf)const;
     int Jugar(graficos &graf);
     int Guardar();
     int Cargar();

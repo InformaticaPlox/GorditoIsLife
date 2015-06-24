@@ -55,7 +55,7 @@ Juego::Juego() {
     while(1){
         int modo= this->Menu();
         if(modo==1){
-            this->Prologo();
+            this->Prologo(graf);
             int r=this->Jugar(graf);
             if(r==1){ // Perdiste
                 cout<<"         GAME OVER"<<endl;
@@ -132,9 +132,12 @@ string* Juego::nombres_archivos()const{
     }
     return nombreArchivo;
 }
-void Juego::Prologo()const{
-    cout<<"HOLI";
-    
+void Juego::Prologo(graficos &graf)const{
+    //graf.PantallaPrologo();
+    for (int i = 5; i >= 0; i--){
+        graf.PantallaNumeros(i);
+        Sleep(1000);
+    }
 }
 int Juego::Jugar(graficos &graf){
     /* Variables:*/
@@ -451,7 +454,7 @@ void Juego::Menu_print(int pos)const{
 }
 void Juego::Menu_head()const{
     cout<"\n\n\n\n\n\n\n\n";
-    cout<<"     "<<"                                 KRANKY"
+    cout<<"     "<<"                                 JUEGO LP1 :"
             <<"     "<<"\n                                        GAME\n"<<endl;
     cout<<"                     ";  
     for(int i=0;i<40;i++)cout<<"-";
