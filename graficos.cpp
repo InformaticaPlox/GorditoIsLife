@@ -49,7 +49,9 @@ int graficos::Movimiento(int& x,int& y)const{
 int  graficos::Recibe_tecla()const{    
 
     readkey();
-    
+    if (key[KEY_Y]) return 1;
+    if (key[KEY_N]) return 0;
+    return 0;    
 }  
 void graficos::Dibujar(int posX,int B,int posY,int A,int limFil,int limCol,int **matriz)const{
     int iniFil = posX - B, iniCol = posY - A,  finFil = posX + B, finCol = posY + A;
@@ -154,6 +156,12 @@ void graficos::PantallaPerder()const{
     blit(arrugon,screen,0,0,0,0,arrugon->w,arrugon->h);
     
 }
+
+void graficos::PantallaSalida()const{
+    BITMAP* seguro = load_bitmap("imagenes\\areyousure.bmp",NULL);
+    blit(seguro,screen,0,0,100,100,seguro->w,seguro->h);    
+}
+
 
 void graficos::PantallaCreditos() const{
 //    BITMAP* pucp = load_bitmap("imagenes\\pucp.bmp",NULL);   

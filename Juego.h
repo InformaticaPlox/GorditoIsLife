@@ -35,9 +35,9 @@ public:
     void buscar_pos(const Laberinto&,int&,int&,int) const;
     
     int movimiento(Avatar&,const graficos&) ;
-    void mostrar_equipo(Avatar&) const;
-    void mostrar_inventario(Avatar&) const;
-    int  mostrar_salir(Avatar&)const;
+    void mostrar_equipo(graficos&) const;
+    void mostrar_inventario(graficos&) const;
+    int  mostrar_salir(graficos&)const;
 
 private:
     Laberinto laberintoActual;
