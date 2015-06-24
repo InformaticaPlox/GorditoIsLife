@@ -10,19 +10,16 @@
 
 using namespace std;
 
-Artefacto::Artefacto() {
+Artefacto::Artefacto() : coordX(0),coordY(0),tipo(2){
     
 }
 
 Artefacto::~Artefacto(){
-//    cout << "Estoy en el destructor de artefacto" << endl;
 }
-Artefacto Artefacto::operator =(const Artefacto& artefacto){
-    
+Artefacto Artefacto::operator =(const Artefacto& artefacto){    
 }
 
-void Artefacto::imprimirNombre(){
-    
+void Artefacto::imprimirNombre(){    
 }
 
 void Artefacto::setCoordY(int coordY) {
@@ -41,9 +38,16 @@ int Artefacto::getCoordX() const {
     return coordX;
 }
 
-void Artefacto::usar(Avatar& heroe){
-    
+void Artefacto::usar(Avatar& heroe){    
 }
 
 char* Artefacto::ObtenDescripcion(){
+}
+
+void Artefacto::setTipo(int tipo) {
+    this->tipo = tipo;
+}
+
+int Artefacto::getTipo() const {
+    return tipo;
 }

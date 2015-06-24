@@ -57,7 +57,6 @@ void Dibujador::Dibuja(int posX, int posY,int limFil,int limCol,const Laberinto&
             cout<<endl;
     }
     graf.Dibujar(posX,this->B,posY,this->A,limFil,limCol,matriz);
-    delete[] matriz;
-   
+    delete[] matriz;   
 }
 

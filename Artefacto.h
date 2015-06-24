@@ -30,9 +30,12 @@ public:
     void setCoordX(int coordX);
     int getCoordX() const;
     virtual char* ObtenDescripcion();
+    void setTipo(int tipo);
+    int getTipo() const;
 private:
     int coordX;
     int coordY;
+    int tipo;
 };
 
 #endif	/* ARTEFACTO_H */

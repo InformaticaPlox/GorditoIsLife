@@ -14,12 +14,10 @@
 
 using namespace std;
 
-Armadura::Armadura(int def, string nomb):defensa(def),nombre(nomb){
-    
+Armadura::Armadura(int def, string nomb):defensa(def),nombre(nomb){    
 }
 
-Armadura::Armadura():defensa(0),nombre(""){
-    
+Armadura::Armadura():defensa(0),nombre(""){    
 }
 
 Armadura::Armadura(const Armadura& orig) {
@@ -30,7 +28,6 @@ Armadura::Armadura(const Armadura& orig) {
 Armadura::~Armadura() {
     this->defensa = 0;
     this->nombre = "";
-//    cout << "Estoy en el destructor de armadura" << endl;
 }
 
 void Armadura::SetDefensa(int defensa) {

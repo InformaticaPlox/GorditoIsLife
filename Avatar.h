@@ -37,6 +37,10 @@ public:
     void disminuyeMana(int tipoAtq);
     int verificaMana(int tipoAtq);
     int obtenDanho(int i);
+    void SetDanhoNormal(int danhoNormal);
+    int GetDanhoNormal() const;
+    int AtkNormal() const;
+    void RecuperaMana();
 private:
     Equipamiento equip;
     int manaActual;

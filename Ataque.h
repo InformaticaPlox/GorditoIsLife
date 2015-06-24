@@ -23,6 +23,7 @@ public:
     void SetDanio(int);
     int GetDanio() const;
     std::string GetNombre() const;
+    void SetNombre(std::string);
     Ataque operator=(const Ataque& atk);
 private:
     std::string nombre;

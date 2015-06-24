@@ -7,12 +7,10 @@
 
 #include "Equipamiento.h"
 
-Equipamiento::Equipamiento() : weapon(), armor(){
-    
+Equipamiento::Equipamiento() : weapon(), armor(){    
 }
 
-Equipamiento::Equipamiento(const Arma& arma,const Armadura& armadura) : weapon(arma), armor(armadura){
-    
+Equipamiento::Equipamiento(const Arma& arma,const Armadura& armadura) : weapon(arma), armor(armadura){    
 }
 
 Equipamiento::Equipamiento(const Equipamiento& orig) {
