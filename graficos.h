@@ -27,6 +27,7 @@ public:
     void PantallaPerder()const;
     void PantallaCreditos()const;
     void PantallaSalida()const;
+    void PantallaNegra()const;
     
     /* EL HARD:*/
     int InterfazCombate()const; /*Descripcion*/

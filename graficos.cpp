@@ -66,6 +66,7 @@ void graficos::Dibujar(int posX,int B,int posY,int A,int limFil,int limCol,int *
     BITMAP* monstruo = load_bitmap("imagenes\\monstruo2.bmp",NULL);
    
     BITMAP* pucp = load_bitmap("imagenes\\pucp.bmp",NULL);
+    BITMAP* lp1 = load_bitmap("imagenes\\lp1.bmp",NULL);
     
     BITMAP* vida100 = load_bitmap("imagenes\\maxvida.bmp",NULL);
     BITMAP* vida50 = load_bitmap("imagenes\\normalvida.bmp",NULL);
@@ -87,8 +88,9 @@ void graficos::Dibujar(int posX,int B,int posY,int A,int limFil,int limCol,int *
             if (valor == 6){blit(monstruo,screen,0,0,(i-iniFil)*TAM,(j-iniCol)*TAM,monstruo->w,monstruo->h);}
         }
     }
-    blit(pucp,screen,0,0,630,560,pucp->w,pucp->h);
-    blit(vida50,screen,0,0,600,400,vida50->w,vida50->h);
+    blit(pucp,screen,0,0,630,562,pucp->w,pucp->h);
+    blit(lp1,screen,0,0,630,482,lp1->w,lp1->h);
+    //blit(vida50,screen,0,0,600,400,vida50->w,vida50->h);
 //    destroy_bitmap(piso);
 //    destroy_bitmap(pared);
 //    destroy_bitmap(avatar);
@@ -160,6 +162,12 @@ void graficos::PantallaPerder()const{
 void graficos::PantallaSalida()const{
     BITMAP* seguro = load_bitmap("imagenes\\areyousure.bmp",NULL);
     blit(seguro,screen,0,0,100,100,seguro->w,seguro->h);    
+}
+
+void graficos::PantallaNegra()const{
+    BITMAP* negro = load_bitmap("imagenes\\fondonegro.bmp",NULL);
+    blit(negro,screen,0,0,0,0,negro->w,negro->h);
+    
 }
 
 

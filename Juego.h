@@ -38,6 +38,8 @@ public:
     void mostrar_equipo(graficos&) const;
     void mostrar_inventario(graficos&) const;
     int  mostrar_salir(graficos&)const;
+    
+    void mostrar_negro(graficos &)const;
 
 private:
     Laberinto laberintoActual;

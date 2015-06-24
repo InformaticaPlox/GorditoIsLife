@@ -187,6 +187,7 @@ int Juego::Jugar(graficos &graf){
             else{
                 int selc=this->mostrar_salir(graf);
                 if (selc==1) return 0; // sale del juego
+                else this->mostrar_negro(graf);
             } 
         }
         else if(cond==RETORNA){
@@ -288,6 +289,9 @@ int  Juego::movimiento(Avatar& heroe,const graficos& graf){
     }
 }
 
+void Juego::mostrar_negro(graficos& graf)const{
+    graf.PantallaNegra();
+}
 
 void Juego::mostrar_equipo(graficos& graf) const{
     /* Mostrará el equipamiento actual del personaje*/
