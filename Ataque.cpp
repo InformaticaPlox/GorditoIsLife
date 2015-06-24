@@ -12,7 +12,7 @@ using namespace std;
 Ataque::Ataque(string nombre,int danio,int mana,string descripcion):nombre(nombre),danio(danio),mana(mana),descripcion(descripcion){
 }
 
-Ataque::Ataque() : nombre(""),danio(100),mana(100),descripcion("") {
+Ataque::Ataque():nombre(""),danio(100),mana(100),descripcion("") {
 }
 
 Ataque::Ataque(const Ataque& orig){
@@ -27,7 +27,6 @@ Ataque::~Ataque() {
     this->descripcion="";
     this->mana=0;
     this->nombre = "";
-//    cout << "Estoy en el destructor de ataque " << endl;
 }
 
 string Ataque::GetDescripcion() const {

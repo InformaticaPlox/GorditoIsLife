@@ -6,8 +6,14 @@
  */
 
 #include "Avatar.h"
+#include "Ataque.h"
 
-Avatar::Avatar() : Entidad(), equip(), manaActual(100), manaMax(100){
+Avatar::Avatar() : Entidad(), equip(), manaActual(100), manaMax(100){ 
+    Arma weapon;
+    Ataque at1;
+    at1.SetDanio(50); at1.SetMana(10);
+    weapon.SetDanhoMax(20); weapon.SetDanhoMin(10);
+    weapon.SetNombre("Noob Sword");
     
 }
 

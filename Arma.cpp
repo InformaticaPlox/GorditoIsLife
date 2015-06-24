@@ -14,12 +14,10 @@
 using namespace std;
 
 Arma::Arma(int min, int max, string nomb,const Ataque& ataque1,const Ataque& ataque2):danhoMin(min),danhoMax(max),
-        nombre(nomb),ataque1(ataque1),ataque2(ataque2){
-    
+        nombre(nomb),ataque1(ataque1),ataque2(ataque2){   
 }
 
-Arma::Arma():danhoMin(0),danhoMax(0),nombre(""),ataque1(),ataque2(){
-    
+Arma::Arma():danhoMin(0),danhoMax(0),nombre(""),ataque1(),ataque2(){    
 }
 
 Arma::Arma(const Arma& orig) {
@@ -30,14 +28,10 @@ Arma::Arma(const Arma& orig) {
     this->ataque2 = orig.ataque2;
 }
 
-Arma::~Arma() {
-    
+Arma::~Arma() {  
     this->danhoMax = 0;
     this->danhoMin = 0;
     this->nombre = "";
-//    this->ataque1.~Ataque();
-//    this->ataque2.~Ataque();
-//    cout << "Estoy en el destructor de arma" << endl;
 }
 
 void Arma::SetNombre(string nombre) {
@@ -89,7 +83,6 @@ Arma Arma::operator =(const Arma& arma){
     }
 }
 
-
 void Arma::imprimirNombre(){
     cout << this->nombre << endl;
 }
@@ -106,9 +99,7 @@ char* Arma::ObtenDescripcion(){
     string strAux = this->GetNombre();
     Ataque atk1 = this->GetAtaque1(); Ataque atk2 = this->GetAtaque2();
     strcpy(buff,strAux.c_str());
-    //strcat(buff,"/MaxDanio: ");
     strcat(buff,"/"); sprintf(aux,"%d",this->GetDanhoMax()); strcat(buff,aux);
-    //strcat(buff,"/MinDanio: ");
     strcat(buff,"/"); sprintf(aux,"%d",this->GetDanhoMin()); strcat(buff,aux);
     strcat(buff,"/Ataque1(");
     strAux = atk1.GetNombre(); strcat(buff,strAux.c_str());
