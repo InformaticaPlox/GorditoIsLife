@@ -20,7 +20,6 @@
       <itemPath>Monstruo.h</itemPath>
       <itemPath>Pocion.h</itemPath>
       <itemPath>Saco.h</itemPath>
-      <itemPath>auxiliar.h</itemPath>
       <itemPath>graficos.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -46,7 +45,6 @@
       <itemPath>Monstruo.cpp</itemPath>
       <itemPath>Pocion.cpp</itemPath>
       <itemPath>Saco.cpp</itemPath>
-      <itemPath>auxiliar.cpp</itemPath>
       <itemPath>graficos.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -149,10 +147,6 @@
       </item>
       <item path="Saco.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="auxiliar.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="auxiliar.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="graficos.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="graficos.h" ex="false" tool="3" flavor2="0">
@@ -243,10 +237,6 @@
       <item path="Saco.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Saco.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="auxiliar.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="auxiliar.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="graficos.cpp" ex="false" tool="1" flavor2="0">
       </item>

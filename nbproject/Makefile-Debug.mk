@@ -51,7 +51,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Monstruo.o \
 	${OBJECTDIR}/Pocion.o \
 	${OBJECTDIR}/Saco.o \
-	${OBJECTDIR}/auxiliar.o \
 	${OBJECTDIR}/graficos.o \
 	${OBJECTDIR}/main.o
 
@@ -74,11 +73,11 @@ LDLIBSOPTIONS=-Llib -lallegro-4.4.2-md
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gorditoislife.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego-master.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gorditoislife.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego-master.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gorditoislife ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego-master ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/Arma.o: Arma.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -160,11 +159,6 @@ ${OBJECTDIR}/Saco.o: Saco.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Saco.o Saco.cpp
 
-${OBJECTDIR}/auxiliar.o: auxiliar.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/auxiliar.o auxiliar.cpp
-
 ${OBJECTDIR}/graficos.o: graficos.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -181,7 +175,7 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gorditoislife.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/juego-master.exe
 
 # Subprojects
 .clean-subprojects:
