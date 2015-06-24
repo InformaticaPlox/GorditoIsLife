@@ -21,6 +21,8 @@ public:
     int  Equipamiento()const; /*Dentro debe ir las descripciones */
     void MostrarArtefacto()const; /*Descripcion */
     int  RecogerArtefacto()const; /*Descripcion */
+    void PantallaPrologo()const;
+    void PantallaNumeros(int)const;
     void PantallaVictoria()const;
     void PantallaPerder()const;
     void PantallaCreditos()const;  

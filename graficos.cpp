@@ -46,13 +46,9 @@ int graficos::Movimiento(int& x,int& y)const{
     else if (key[KEY_RIGHT]){x+=1;}
     return 0;
 }
-int  graficos::Recibe_tecla()const{
-    allegro_init();
-    install_timer();
-    install_keyboard();
-    
-    int key;
-    key= readkey();
+int  graficos::Recibe_tecla()const{    
+
+    readkey();
     
 }  
 void graficos::Dibujar(int posX,int B,int posY,int A,int limFil,int limCol,int **matriz)const{
@@ -63,9 +59,9 @@ void graficos::Dibujar(int posX,int B,int posY,int A,int limFil,int limCol,int *
     BITMAP* pared = load_bitmap("imagenes\\pared.bmp",NULL);
     BITMAP* inicio = load_bitmap("imagenes\\inicio.bmp",NULL);
     BITMAP* fin = load_bitmap("imagenes\\salida.bmp",NULL);
-    BITMAP* piso = load_bitmap("imagenes\\piso.bmp",NULL);
+    BITMAP* piso = load_bitmap("imagenes\\piso2.bmp",NULL);
     BITMAP* artefacto = load_bitmap("imagenes\\artefacto.bmp",NULL);
-    BITMAP* monstruo = load_bitmap("imagenes\\monstruo.bmp",NULL);
+    BITMAP* monstruo = load_bitmap("imagenes\\monstruo2.bmp",NULL);
    
     BITMAP* pucp = load_bitmap("imagenes\\pucp.bmp",NULL);
     
@@ -89,7 +85,7 @@ void graficos::Dibujar(int posX,int B,int posY,int A,int limFil,int limCol,int *
             if (valor == 6){blit(monstruo,screen,0,0,(i-iniFil)*TAM,(j-iniCol)*TAM,monstruo->w,monstruo->h);}
         }
     }
-    blit(pucp,screen,0,0,640,570,pucp->w,pucp->h);
+    blit(pucp,screen,0,0,630,560,pucp->w,pucp->h);
     blit(vida50,screen,0,0,600,400,vida50->w,vida50->h);
 //    destroy_bitmap(piso);
 //    destroy_bitmap(pared);
@@ -114,12 +110,45 @@ void graficos::MostrarArtefacto()const{ /*Descripcion */
 int  graficos::RecogerArtefacto()const{ /*Descripcion */
     
 } 
+
+void graficos::PantallaPrologo()const{
+    BITMAP* prologo = load_bitmap("imagenes\\prologo.bmp",NULL);
+    blit(prologo,screen,0,0,0,0,prologo->w,prologo->h);    
+}
+
+void graficos::PantallaNumeros(int i)const{
+    if (i == 5){
+        BITMAP* cinco = load_bitmap("imagenes\\cinco.bmp",NULL);
+        blit(cinco,screen,0,0,0,0,cinco->w,cinco->h);    
+    }
+    if (i == 4){
+        BITMAP* cuatro = load_bitmap("imagenes\\cuatro.bmp",NULL);
+        blit(cuatro,screen,0,0,0,0,cuatro->w,cuatro->h);        
+    }
+    if (i == 3){
+        BITMAP* tres = load_bitmap("imagenes\\tres.bmp",NULL);
+        blit(tres,screen,0,0,0,0,tres->w,tres->h);        
+    }
+    if (i == 2){
+        BITMAP* dos = load_bitmap("imagenes\\dos.bmp",NULL);
+        blit(dos,screen,0,0,0,0,dos->w,dos->h);
+        
+    }
+    if (i == 1){
+        BITMAP* uno = load_bitmap("imagenes\\uno.bmp",NULL);
+        blit(uno,screen,0,0,0,0,uno->w,uno->h);   
+    }
+    if (i == 0){
+        BITMAP* cero = load_bitmap("imagenes\\fondonegro.bmp",NULL);
+        blit(cero,screen,0,0,0,0,cero->w,cero->h);
+    }
+}
+
 void graficos::PantallaVictoria()const{
     BITMAP* gameover = load_bitmap("imagenes\\gameover.bmp",NULL);
-    blit(gameover,screen,0,0,0,0,gameover->w,gameover->h);
-    
-    
+    blit(gameover,screen,0,0,0,0,gameover->w,gameover->h);  
 }
+
 void graficos::PantallaPerder()const{
     BITMAP* arrugon = load_bitmap("imagenes\\arrugon.bmp",NULL);
     blit(arrugon,screen,0,0,0,0,arrugon->w,arrugon->h);
