@@ -1,0 +1,28 @@
+===Monstruos===
+ViviGod 150 100
+AnSal 130 80
+ShaCa 120 70
+DanHur 100 70
+SamSar 60 60 
+NiGue 80 30
+Camcha 60 15
+AcaNadieEsunMonstruo 40 20
+pManriquez93 15 10   
+===Armas===
+Excalibur/120/100/Ataque1/30/20/Ataque2/40/30
+Mjolnir/100/80/Ataque1/30/25/Ataque2/35/30
+Kusanagi/75/50/Ataque1/20/15/Ataque2/25/20
+Narsil/60/40/Ataque1/20/20/Ataque2/30/30
+Tyrfing/60/20/Ataque1/20/30/Ataque2/25/35
+Daga de Morgul/40/10/Ataque1/15/30/Ataque2/20/40
+===Pociones===
+0/Pocion de curacion/70
+0/Megapocion de curacion/120
+1/Pocion de mana/70
+1/Megapocion de mana/120
+===Armaduras===
+Oro 80	
+Orihalcon 60
+Plata 50
+Acero 30
+Bronce 20
