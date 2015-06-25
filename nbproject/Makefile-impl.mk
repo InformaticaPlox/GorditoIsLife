@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Juego-master
+PROJECTNAME=GorditoIsLife
 
 # Active Configuration
 DEFAULTCONF=Debug

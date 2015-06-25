@@ -97,19 +97,10 @@ void Arma::usar(Avatar& heroe){
 char* Arma::ObtenDescripcion(){
     char buff[200], aux[10];
     string strAux = this->GetNombre();
-    Ataque atk1 = this->GetAtaque1(); Ataque atk2 = this->GetAtaque2();
     strcpy(buff,strAux.c_str());
     strcat(buff,"/"); sprintf(aux,"%d",this->GetDanhoMax()); strcat(buff,aux);
     strcat(buff,"/"); sprintf(aux,"%d",this->GetDanhoMin()); strcat(buff,aux);
-    strcat(buff,"/Ataque1(");
-    strAux = atk1.GetNombre(); strcat(buff,strAux.c_str());
-    sprintf(aux,"%d",atk1.GetDanio()); strcat(buff,","); strcat(buff,aux);
-    sprintf(aux,"%d",atk1.GetMana());  strcat(buff,","); strcat(buff,aux);
-    strcat(buff,")/Ataque2(");
-    strAux = atk2.GetNombre(); strcat(buff,strAux.c_str());
-    sprintf(aux,"%d",atk2.GetDanio()); strcat(buff,","); strcat(buff,aux);
-    sprintf(aux,"%d",atk2.GetMana());  strcat(buff,","); strcat(buff,aux);
-    strcat(buff,")");
+    
     char *nuevo = new char[strlen(buff)+1];
     strcpy(nuevo,buff);
     return nuevo;

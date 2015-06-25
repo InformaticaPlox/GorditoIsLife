@@ -14,6 +14,8 @@
 
 using namespace std;
 
+class Avatar;
+
 class Saco {
 public:
     Saco();
@@ -24,6 +26,7 @@ public:
     void imprimeElementos();
     int  cantidad()const;
     Saco operator=(const Saco& bag);
+    friend Avatar;
 private:
     vector<Artefacto*> saco;
 };

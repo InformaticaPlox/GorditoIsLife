@@ -519,6 +519,10 @@ bool Juego::Batalla(Avatar& heroe, Monstruo& mon)const{
         int selAtk; //Selecciona cual de los 2 ataques del arma usare
         //Que desea hacer?
         //Si desea atacar
+//        while ((accion != 0) && (accion != 1) && (accion != 2)){
+//            //Pedir "accion"
+//            cin >> accion;
+//        }
         if (accion == 0){ //ATaco
             //Que ataque desea uasar?
             //Imprime el ataque que usa

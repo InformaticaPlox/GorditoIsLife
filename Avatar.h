@@ -28,7 +28,7 @@ public:
     Avatar operator=(const Avatar& av);
     void recogeArtefacto(Artefacto *&artefacto);
     Artefacto *retiraArtefacto(int pos);
-    void observaSaco();
+    char** observaSaco();
     void CambiaArma(Arma &arma);
     Arma obtenArma() const;
     void CambiaArmadura(Armadura &armadura);

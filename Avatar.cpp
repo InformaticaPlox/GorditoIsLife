@@ -8,6 +8,11 @@
 #include "Avatar.h"
 #include "Ataque.h"
 #include "Pocion.h"
+#include <cstring>
+#include <vector>
+#include <iostream>
+
+using namespace std;
 
 Avatar::Avatar() : Entidad(),equip(),manaActual(100), manaMax(100){ 
     Ataque at1,at2;
@@ -113,8 +118,20 @@ Artefacto* Avatar::retiraArtefacto(int pos){
     this->inventario.sacaElemento(pos);
 }
 
-void Avatar::observaSaco(){
-    this->inventario.imprimeElementos();
+char** Avatar::observaSaco(){
+    char *buff[10];
+    vector<Artefacto*>::iterator it;
+    int i = 0;
+    for(it = this->inventario.saco.begin(); it != this->inventario.saco.end(); it++){
+        Artefacto *art = *it;
+        buff[i] = new char[strlen(art->ObtenDescripcion())+1];
+        strcpy(buff[i],art->ObtenDescripcion());
+        i++;
+    }
+    char **bag = new char*[i];
+    for(int j = 0 ; j < i; j++)
+        bag[j] = buff[j];
+    return bag;
 }
 
 void Avatar::recibeDanio(int danho){

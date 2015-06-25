@@ -41,14 +41,14 @@ void prueba_oso(){
 //    Ataque pw2("Puño y Mordida",50,15,"Capaz de herirte mucho :v");
 //    Artefacto *art = new Pocion(0,"Pocion de Curacion ksm",100);
 //    art->imprimirNombre();
-//    Artefacto *art2 = new Arma(20,30,"Samoel",pw1,pw2);
+    Artefacto *art2 = new Arma(20,30,"Samoel",pw1,pw2);
 //    art2->imprimirNombre();
 //    Pocion p1;
 //    cout << p1.GetId() << " " << p1.GetNombre() << " " << p1.GetPuntos() << endl;
     Pocion p1(0,"Pocion de curacion",100);
     Artefacto *poc = new Pocion(p1);
-    cout << poc->ObtenDescripcion() << endl;
-      //Artefacto *art = new Armadura(30,"Chaleco");
+   // cout << poc->ObtenDescripcion() << endl;
+      Artefacto *art = new Armadura(30,"Chaleco");
 //    Pocion *p = (Pocion*)poc;
 //    cout << p->GetId() << " " << p->GetNombre() << " " << p->GetPuntos() << endl;
     
@@ -64,7 +64,7 @@ void prueba_oso(){
 //    Pocion *p = (Pocion*)art1;
 //    cout << p->GetId() << " " << p->GetNombre() << " " << p->GetPuntos() << endl;
     
- //   Armadura arm(30,"Escudork");
+    Armadura arm(30,"Escudork");
     
 //    Equipamiento mm(weapon,arm);
 //    Arma a1 = mm.GetWeapon();
@@ -77,8 +77,14 @@ void prueba_oso(){
 //     cout << b1.GetDefensa() << "/" << b1.GetNombre() << endl;
 
     
-//    Avatar heroe(3,4,100,100,"Pablito",weapon,arm,100,100);
-//    heroe.SetNombre("JUANI");
+    Avatar heroe(3,4,100,100,"Pablito",weapon,arm,100,100);
+    heroe.SetNombre("JUANI");
+    heroe.recogeArtefacto(art2);
+    heroe.recogeArtefacto(art);
+    heroe.recogeArtefacto(poc);
+    char **moc = heroe.observaSaco();
+    for(int i = 0; i < 3; i++)
+        cout << moc[i] << endl;
 //     Ataque pw3("No se que chucha poner",30,10,"Ni idea");
 //    Ataque pw4("No se me ocurre nada",60,25,"Bica");
 //    Arma arma(10,20,"V",pw3,pw4);
@@ -135,7 +141,7 @@ void prueba_oso2(){
 
 
 int main(int argc, char** argv) {
-   //prueba_oso();
+//   prueba_oso();
    // prueba_allegro();
    // prueba_oso2();
     Juego J;   
